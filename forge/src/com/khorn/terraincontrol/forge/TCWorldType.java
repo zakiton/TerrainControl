@@ -2,11 +2,11 @@ package com.khorn.terraincontrol.forge;
 
 import java.io.File;
 
-import net.minecraft.src.IChunkProvider;
-import net.minecraft.src.World;
-import net.minecraft.src.WorldChunkManager;
-import net.minecraft.src.WorldClient;
-import net.minecraft.src.WorldType;
+import net.minecraft.client.multiplayer.WorldClient;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.WorldChunkManager;
+import net.minecraft.world.chunk.IChunkProvider;
 
 import com.khorn.terraincontrol.configuration.WorldConfig;
 
@@ -40,7 +40,7 @@ public class TCWorldType extends WorldType
         SingleWorld.restoreBiomes();
 
         // Load everything
-        File worldDirectory = new File(plugin.terrainControlDirectory, "worlds" + File.separator + world.getSaveHandler().getSaveDirectoryName());
+        File worldDirectory = new File(plugin.terrainControlDirectory, "worlds" + File.separator + world.getSaveHandler().getWorldDirectoryName());
 
         if (!worldDirectory.exists())
         {
@@ -50,7 +50,7 @@ public class TCWorldType extends WorldType
                 System.out.println("TerrainControl: cant create folder " + worldDirectory.getAbsolutePath());
         }
 
-        this.worldTC = new SingleWorld(world.getSaveHandler().getSaveDirectoryName());
+        this.worldTC = new SingleWorld(world.getSaveHandler().getWorldDirectoryName());
         WorldConfig config = new WorldConfig(worldDirectory, worldTC, false);
         this.worldTC.Init(world, config);
 

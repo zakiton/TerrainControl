@@ -1,8 +1,9 @@
 package com.khorn.terraincontrol.bukkit;
 
+import net.minecraft.server.v1_5_R3.Block;
+
 import com.khorn.terraincontrol.configuration.WorldConfig;
 import com.khorn.terraincontrol.generator.ChunkProviderTC;
-import net.minecraft.server.Block;
 import org.bukkit.World;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;

@@ -14,7 +14,6 @@ import com.khorn.terraincontrol.util.Txt;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -26,6 +25,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = "TerrainControl", name = "TerrainControl", version = "2.3.4")
 @NetworkMod(clientSideRequired = false, serverSideRequired = false)
@@ -78,7 +78,7 @@ public class TCPlugin implements TerrainControlEngine
         {
             return null;
         }
-        String worldName = MinecraftServer.getServer().worldServers[0].getSaveHandler().getSaveDirectoryName();
+        String worldName = MinecraftServer.getServer().worldServers[0].getSaveHandler().getWorldDirectoryName();
         if(world.getName() == worldName)
         {
             return world;

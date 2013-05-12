@@ -4,7 +4,7 @@ import com.khorn.terraincontrol.*;
 import com.khorn.terraincontrol.configuration.BiomeConfig;
 import com.khorn.terraincontrol.configuration.WorldConfig;
 import com.khorn.terraincontrol.generator.resourcegens.TreeType;
-import net.minecraft.server.*;
+import net.minecraft.server.v1_5_R3.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -263,17 +263,17 @@ public class BukkitWorld implements LocalWorld
                         {
                             for (int sectionY = 0; sectionY < 16; sectionY++)
                             {
-                                int blockId = section.a(sectionX, sectionY, sectionZ);
+                                int blockId = section.getTypeId(sectionX, sectionY, sectionZ);
                                 if (biomeConfig.ReplaceMatrixBlocks[blockId] == null)
                                     continue;
 
-                                int replaceTo = biomeConfig.ReplaceMatrixBlocks[blockId][section.d() + sectionY];
+                                int replaceTo = biomeConfig.ReplaceMatrixBlocks[blockId][section.getYPosition() + sectionY];
                                 if (replaceTo == -1)
                                     continue;
 
-                                section.a(sectionX, sectionY, sectionZ, replaceTo >> 4);
-                                section.b(sectionX, sectionY, sectionZ, replaceTo & 0xF);
-                                world.notify((x + sectionX), (section.d() + sectionY), (z + sectionZ));
+                                section.setTypeId(sectionX, sectionY, sectionZ, replaceTo >> 4);
+                                section.setData(sectionX, sectionY, sectionZ, replaceTo & 0xF);
+                                world.notify((x + sectionX), (section.getYPosition() + sectionY), (z + sectionZ));
 
                             }
                         }

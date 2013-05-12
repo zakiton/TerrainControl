@@ -1,7 +1,8 @@
 package com.khorn.terraincontrol.bukkit;
 
-import java.util.Random;
-
+import com.khorn.terraincontrol.configuration.BiomeConfig;
+import com.khorn.terraincontrol.configuration.Resource;
+import com.khorn.terraincontrol.generator.resourcegens.TreeGen;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -11,9 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.world.StructureGrowEvent;
 import org.bukkit.event.world.WorldInitEvent;
 
-import com.khorn.terraincontrol.configuration.BiomeConfig;
-import com.khorn.terraincontrol.configuration.Resource;
-import com.khorn.terraincontrol.generator.resourcegens.TreeGen;
+import java.util.Random;
 
 public class TCListener implements Listener
 {

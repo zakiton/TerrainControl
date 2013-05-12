@@ -1,6 +1,6 @@
 package com.khorn.terraincontrol.bukkit;
 
-import net.minecraft.server.WorldProvider;
+import net.minecraft.server.v1_5_R3.WorldProvider;
 
 /**
  * We extend this file to be able to set the sea level.

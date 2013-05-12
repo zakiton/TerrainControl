@@ -1,11 +1,14 @@
 package com.khorn.terraincontrol.bukkit;
 
-import com.khorn.terraincontrol.biomelayers.layers.Layer;
-import com.khorn.terraincontrol.configuration.WorldConfig;
 import com.khorn.terraincontrol.DefaultBiome;
 import com.khorn.terraincontrol.IBiomeManager;
 import com.khorn.terraincontrol.LocalWorld;
-import net.minecraft.server.*;
+import com.khorn.terraincontrol.biomelayers.layers.Layer;
+import com.khorn.terraincontrol.configuration.WorldConfig;
+import net.minecraft.server.v1_5_R3.BiomeBase;
+import net.minecraft.server.v1_5_R3.BiomeCache;
+import net.minecraft.server.v1_5_R3.ChunkPosition;
+import net.minecraft.server.v1_5_R3.WorldChunkManager;
 
 import java.util.List;
 import java.util.Random;

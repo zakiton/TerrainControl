@@ -4,10 +4,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.EntityPlayerMP;
-import net.minecraft.src.Packet250CustomPayload;
 
 import com.khorn.terraincontrol.LocalWorld;
 import com.khorn.terraincontrol.TerrainControl;
@@ -34,7 +34,7 @@ public class PlayerTracker implements IPlayerTracker
         // so for now the configs are sent anyway.
 
         // Get the config
-        String worldName = MinecraftServer.getServer().worldServers[0].getSaveHandler().getSaveDirectoryName();
+        String worldName = MinecraftServer.getServer().worldServers[0].getSaveHandler().getWorldDirectoryName();
         LocalWorld worldTC = TerrainControl.getWorld(worldName);
 
         if (worldTC == null)

@@ -1,13 +1,13 @@
 package com.khorn.terraincontrol.bukkit;
 
-import com.khorn.terraincontrol.configuration.WorldConfig;
 import com.khorn.terraincontrol.IBiomeManager;
 import com.khorn.terraincontrol.LocalWorld;
+import com.khorn.terraincontrol.configuration.WorldConfig;
 import com.khorn.terraincontrol.util.NoiseGeneratorOctaves2;
-import net.minecraft.server.BiomeBase;
-import net.minecraft.server.BiomeCache;
-import net.minecraft.server.ChunkPosition;
-import net.minecraft.server.WorldChunkManager;
+import net.minecraft.server.v1_5_R3.BiomeBase;
+import net.minecraft.server.v1_5_R3.BiomeCache;
+import net.minecraft.server.v1_5_R3.ChunkPosition;
+import net.minecraft.server.v1_5_R3.WorldChunkManager;
 
 import java.util.List;
 import java.util.Random;
